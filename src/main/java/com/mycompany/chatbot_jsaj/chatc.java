@@ -83,7 +83,7 @@ public class chatc extends JFrame {
 
         newChatButton.addActionListener(e -> {
             chatHistory.setText("");
-            apiConnector.resetChat(); 
+            apiConnector.resetChat();
             conversationManager = new ConversationManager(chatc.this);
         });
 

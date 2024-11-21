@@ -6,13 +6,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class ChatBot {
-    // Eliminar los arrays estáticos roles y mensajes
 
-    public static void guardarEnJson() {
-        JSONArray historial = new JSONArray();
-        // Obtener el historial de la conversación desde ConversationManager
-        // ...
-
+    public static void guardarEnJson(JSONArray historial) { // Recibe el historial como argumento
         try (FileWriter archivo = new FileWriter("historial_chat.json")) {
             archivo.write(historial.toJSONString());
             archivo.flush();
