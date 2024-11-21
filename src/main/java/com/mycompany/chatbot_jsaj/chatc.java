@@ -47,6 +47,7 @@ public class chatc extends JFrame {
         JPanel inputPanel = new JPanel(new FlowLayout());
         userInput = new JTextField(30);
         sendButton = new JButton("Enviar");
+        sendButton.setBackground(Color.GREEN);
         newChatButton = new JButton("Nuevo Chat");
         saveConversationButton = new JButton("Guardar Conversación");
 
