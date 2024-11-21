@@ -8,6 +8,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.io.File;
 
 public class HistorialFrame extends JFrame {
 
@@ -27,6 +30,21 @@ public class HistorialFrame extends JFrame {
         cargarHistorial();
 
         setVisible(true);
+
+        JButton btnLimpiarHistorial = new JButton("Limpiar Historial");
+        btnLimpiarHistorial.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                historialTextArea.setText(""); // Limpia el JTextArea
+                // Eliminar el archivo JSON
+                File archivoHistorial = new File("historial_chat.json");
+                if (archivoHistorial.exists()) {
+                    archivoHistorial.delete();
+                }
+            }
+        });
+        // Agregar el botón al panel
+        add(btnLimpiarHistorial, BorderLayout.SOUTH);
     }
 
     private void cargarHistorial() {
